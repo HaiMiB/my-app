@@ -1,0 +1,14 @@
+.todo__item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.todo__item p {
+    color: #888;
+    /* text-decoration: line-through; */
+}
+
+.button__container {
+    margin-bottom: 8px;
+}

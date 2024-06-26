@@ -1,0 +1,34 @@
+.addtask__template {
+    display: flex;
+    flex-direction: column;
+    margin: 0rem 30%;
+    margin-bottom: 20px;
+}
+
+.addtask__title {
+    display: flex;
+    flex-direction: column;
+    margin: 0rem 30%;
+    margin-bottom: 20px;
+}
+
+.addtask__description {
+    display: flex;
+    flex-direction: column;
+    margin: 0rem 30%;
+    margin-bottom: 20px;
+}
+
+.addtask__status {
+    display: flex;
+    flex-direction: column; 
+    margin: 0rem 30%;
+    margin-bottom: 10px;
+}
+
+.addtask__status select {
+    text-align-last: center;
+    text-align: center;
+    -ms-text-align-last: center;
+    -moz-text-align-last: center;
+ }

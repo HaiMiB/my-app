@@ -1,23 +1,29 @@
 import React, { useState, useEffect } from 'react';
+import "./tasklist.css";
 import axios from 'axios';
+import TodoItem from './ToDoItem';
 
-const TaskList = () => {
-    const [tasks, setTasks] = useState([]);
+const TaskList = ({tasks, currentTask, onEdit, fetchTasks}) => {
+    
 
-    useEffect(() => {
-        axios.get('http://localhost:5000/tasks')
-            .then(response => setTasks(response.data))
-            .catch(error => console.error('Error fetching tasks:', error));
-    }, []);
+    function deleteTask(id) {
+        axios.delete(`http://localhost:5000/tasks/${id}`)
+            .then(response => {
+                console.log('Task deleted:',response.data);
+                fetchTasks();
+            })
+            .catch(error => {
+                console.error('Error:', error.message);
+            });
+
+    }
 
     return (
-        <div>
+        <div className='task__list'>
             <h1>Task List</h1>
             <ul>
                 {tasks.map(task => (
-                    <li key={task.id}>
-                        {task.title} - {task.status}
-                    </li>
+                    <TodoItem key={task.id} task={task} currentTask={currentTask}  onEdit={onEdit} deleteTask={deleteTask}  ></TodoItem>
                 ))}
             </ul>
         </div>
