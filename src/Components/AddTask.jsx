@@ -47,7 +47,7 @@ const AddTask = ({fetchTasks }) => {
                     <label>Status:</label>
                     <select value={status} onChange={(e) => setStatus(e.target.value)}>
                         <option value="pending">Pending</option>
-                        <option value="completed">In Progress</option>
+                        <option value="inprogress">In Progress</option>
                         <option value="completed">Completed</option>
                     </select>
                 </div>

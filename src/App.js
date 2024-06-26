@@ -18,7 +18,15 @@ function App() {
       .catch(error => console.error('Error fetching tasks:', error));
   };
 
-  const handleEdit = (task) => {
+  const handleEdit = (task,[title, description,status='pending'])=> {
+    if (currentTask){
+      axios.put(`http://localhost:5000/tasks/${currentTask}`, { title, description, status })
+          .then(response => {
+              console.log('Task updated:', response.data);
+              fetchTasks();
+          })
+          .catch(error => console.error('Error updating task:', error));
+  }
     setCurrentTask(task);
     console.log(task)
 };

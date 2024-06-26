@@ -7,8 +7,8 @@ function TodoItem({ task, currentTask, onEdit, deleteTask }) {
 
     return (
         <li key={task.id} className="todo__item">
-
-            {(currentTask === task.id) ? <input type="text" defaultValue={task.title}  required />
+            {/* TODO: Add edit function, get value of input text value and let update func work */}
+            {(currentTask === task.id) ? <input type="text" defaultValue={task.title} onChange={(e)=> {}} required />
                 : <p>{task.title}</p>}
 
             <p>{task.description}</p>
@@ -16,8 +16,8 @@ function TodoItem({ task, currentTask, onEdit, deleteTask }) {
                 <button onClick={() => deleteTask(task.id)}>
                     X
                 </button>
-                <button onClick={() =>  onEdit(task.id)}>
-                'Edit'
+                <button onClick={() =>  {currentTask ? onEdit(null,[task.title,task.description]) : onEdit(task.id,[])}}>
+                {(currentTask === task.id) ? 'Update Task' : 'Add Task'}
                 </button>
             </div>
 
