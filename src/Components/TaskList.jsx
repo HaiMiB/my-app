@@ -20,7 +20,7 @@ const TaskList = ({tasks, currentTask, onEdit, fetchTasks}) => {
 
     return (
         <div className='task__list'>
-            <h1>Task List</h1>
+            <h2>Task List</h2>
             <ul>
                 {tasks.map(task => (
                     <TodoItem key={task.id} task={task} currentTask={currentTask}  onEdit={onEdit} deleteTask={deleteTask}  ></TodoItem>

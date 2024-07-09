@@ -33,6 +33,7 @@ function App() {
 
   return (
     <div className="App">
+      <h1>TASK MANAGER</h1>
       <AddTask fetchTasks={fetchTasks}/>
       <TaskList tasks={tasks} currentTask={currentTask}  onEdit={handleEdit} fetchTasks={fetchTasks}/>
     </div>
