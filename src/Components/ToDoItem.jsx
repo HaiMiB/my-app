@@ -9,7 +9,6 @@ const [status, setStatus] = useState(task.status);
 
     return (
         <li key={task.id} className="todo__item">
-            {/* TODO: Add edit function, get value of input text value and let update func work */}
             {(currentTask === task.id) ? <input type="text" defaultValue={task.title} onInput={e => setInput(e.target.value)} required /> 
                 : <p>{task.title}</p>}
             {console.log(input)}

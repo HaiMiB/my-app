@@ -5,7 +5,10 @@ import TodoItem from './ToDoItem';
 
 const TaskList = ({tasks, currentTask, onEdit, fetchTasks}) => {
     
-
+/**
+ * Delete task
+ * @param {float} id 
+ */
     function deleteTask(id) {
         axios.delete(`http://localhost:5000/tasks/${id}`)
             .then(response => {

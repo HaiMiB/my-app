@@ -12,12 +12,20 @@ function App() {
     fetchTasks();
   }, []);
 
+  /**
+   * Fetches all tasks from the database
+   */
   const fetchTasks = () => {
     axios.get('http://localhost:5000/tasks')
       .then(response => setTasks(response.data))
       .catch(error => console.error('Error fetching tasks:', error));
   };
 
+  /**
+   * Updating tasks
+   * @param {*} task 
+   * @param {*} param1 
+   */
   const handleEdit = (task,[title, description,status='pending'])=> {
     if (currentTask){
       axios.put(`http://localhost:5000/tasks/${currentTask}`, { title, description, status })
